@@ -38,6 +38,7 @@ public class Bat : MonoBehaviour {
 			Debug.Log (contact.thisCollider.name + " hit " + contact.otherCollider.name);
 			// setup for the hit
 			Rigidbody boxBody;
+			Rigidbody batBody = gameObject.GetComponent<Rigidbody>();
 			//BoxCollider boxCollider;
 			// get the rigidbody
 			boxBody = other.gameObject.GetComponent<Rigidbody>();
@@ -49,7 +50,9 @@ public class Bat : MonoBehaviour {
 			// calculate where the hit took place
 			Vector3 force = boxBody.transform.position - transform.position;
 			// multiply it by some power (50 is what im using now)
-			force = force * 50;
+			Rigidbody CarBody =  gameObject.GetComponentInParent<Rigidbody>();
+			Debug.Log(Mathf.Abs(CarBody.velocity.x));
+			force = force * Mathf.Abs(CarBody.velocity.x) * 5;
 			boxBody.AddForceAtPosition(force, pos, ForceMode.Impulse);
 		}
 	}

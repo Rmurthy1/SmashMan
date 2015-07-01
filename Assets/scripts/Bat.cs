@@ -56,19 +56,4 @@ public class Bat : MonoBehaviour {
 			boxBody.AddForceAtPosition(force, pos, ForceMode.Impulse);
 		}
 	}
-
-	void swing()
-	{
-		batSwing.SetTrigger ("IsSwinging");
-	}
-
-	// Update is called once per frame
-	void Update () {
-		if (Input.GetKeyDown("space"))
-		{
-			//Debug.Log("pressed space");
-			swing ();
-		}
-	
-	}
 }

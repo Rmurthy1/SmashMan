@@ -50,7 +50,7 @@ public class Bat : MonoBehaviour {
 			// calculate where the hit took place
 			Vector3 force = boxBody.transform.position - transform.position;
 			// multiply it by some power (50 is what im using now)
-			Rigidbody CarBody =  gameObject.GetComponentInParent<Rigidbody>();
+			Rigidbody CarBody =  GameObject.FindGameObjectWithTag("car").GetComponent<Rigidbody>();
 			Debug.Log(Mathf.Abs(CarBody.velocity.x));
 			force = force * Mathf.Abs(CarBody.velocity.x) * 5;
 			boxBody.AddForceAtPosition(force, pos, ForceMode.Impulse);

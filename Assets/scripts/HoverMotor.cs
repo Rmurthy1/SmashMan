@@ -58,7 +58,7 @@ public class HoverMotor : MonoBehaviour {
 		if (powerInput < 0) {
 			powerInput = 0;
 		}
-		carRigidbody.AddRelativeForce(0f, 0f, -powerInput * speed);
+		carRigidbody.AddRelativeForce(-powerInput * speed, 0f, 0f);
 		carRigidbody.AddRelativeTorque(0f, turnInput * turnSpeed, 0f);
 		//Debug.Log (carRigidbody.velocity);
 	}

@@ -10,7 +10,7 @@ public class BatSwing : MonoBehaviour
 	bool swing = false;
 	bool readyToSwing = true;
 
-	int swingSpeed = 1000;
+	int swingSpeed = 50;
 	// Use this for initialization
 	void Start ()
 	{

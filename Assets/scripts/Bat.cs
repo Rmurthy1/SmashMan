@@ -6,7 +6,6 @@ public class Bat : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		batSwing = GetComponent<Animator> ();
 
 
 	}
@@ -30,15 +29,20 @@ public class Bat : MonoBehaviour {
 		if (other.gameObject.tag == "mailbox") {
 			// get first contact point
 			ContactPoint contact = collision.contacts [0];
+
+
 			// not sure what this does
-			Quaternion rot = Quaternion.FromToRotation (Vector3.up, contact.normal);
+			// Quaternion rot = Quaternion.FromToRotation (Vector3.up, contact.normal);
+
+
+
 			// get the point of the collision
 			Vector3 pos = contact.point;
 			// print out what touched what
 			Debug.Log (contact.thisCollider.name + " hit " + contact.otherCollider.name);
 			// setup for the hit
 			Rigidbody boxBody;
-			Rigidbody batBody = gameObject.GetComponent<Rigidbody>();
+
 			//BoxCollider boxCollider;
 			// get the rigidbody
 			boxBody = other.gameObject.GetComponent<Rigidbody>();
